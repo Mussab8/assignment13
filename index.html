@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Futuristic Robot UI</title>
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .scene {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(circle at center, #001f33 0%, #000 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .robot {
+      width: 150px;
+      height: 200px;
+      background: linear-gradient(145deg, #444, #888);
+      border-radius: 50% 50% 40% 40%;
+      box-shadow: 0 0 30px #00f2ff;
+      position: relative;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .eye {
+      position: absolute;
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 20px;
+      background: #00f2ff;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #00f2ff;
+    }
+
+    .ui-panel {
+      position: absolute;
+      left: 200px;
+      width: 400px;
+      height: 300px;
+      background: rgba(0, 255, 255, 0.1);
+      border: 2px solid #00f2ff;
+      border-radius: 10px;
+      box-shadow: 0 0 30px #00f2ff;
+      padding: 20px;
+      color: #00f2ff;
+      font-size: 16px;
+      animation: flicker 3s infinite;
+    }
+
+    .circle-chart {
+      width: 80px;
+      height: 80px;
+      border: 5px solid #00f2ff;
+      border-radius: 50%;
+      margin-top: 20px;
+      animation: spin 5s linear infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="scene">
+    <div class="robot">
+      <div class="eye"></div>
+    </div>
+    <div class="ui-panel">
+      <h3>System Status</h3>
+      <p>Checking protocols...</p>
+      <div class="circle-chart"></div>
+    </div>
+  </div>
+</body>
+</html>
